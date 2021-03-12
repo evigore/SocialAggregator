@@ -1,5 +1,18 @@
 import re
 
+"""
+@app.route('/<int:userid>/<string:name>')
+def index(userid, name):
+	user = testDB.users.find_one({"id": userid})
+
+	if user:
+		testDB.users.update_one(user, {"$set": {"name": name}})
+	else:
+		testDB.users.insert_one({"id": userid, "name": name})
+
+	return "Hello " + name + '(' + str(userid) + ')'
+"""
+
 class Auth:
 	def __init__(self, db):
 		self.db = db
