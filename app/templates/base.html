@@ -1,18 +1,37 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
+	{% if title %}{{ title }} - Messenger {% else %} Welcome to messenger{% endif %}
 {% endblock %}
 
 {% block navbar %}
     <nav class="navbar navbar-default">
-        Навигационная панель
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Messenger</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav navbar-right">
+                    <li><a>Login</a></li>
+		    <li><a>Messages</a></li>
+		    <li><a>Contacts</a></li>
+		    <li><a>Profile</a></li>
+		    <li><a>Settings</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        {# содержимое приложения которое должно быть предоставлено в блоке app_content #}
         {% block app_content %}{% endblock %}
     </div>
 {% endblock %}

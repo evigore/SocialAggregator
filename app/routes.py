@@ -9,19 +9,3 @@ def not_found_error(error):
 @app.route('/index')
 def index():
 	return render_template('index.html')
-
-"""
-@app.route('/login/<string:login>/<string:pw>')
-def login(login, pw):
-	return str(auth.login_user(login, pw))
-
-@app.route('/signup/<string:login>/<string:pw>')
-def signup(login, pw):
-	try:
-		auth.register_user(login, pw)
-	except Exception as e:
-		return str(e)
-
-	return 'Success'
-
-"""

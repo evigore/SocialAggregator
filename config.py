@@ -1,5 +1,5 @@
 import os
 
 class Config(object):
-	DB_HOST = '127.0.01'
-	DB_PORT = 27017
+	SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+	MONGO_URI = 'mongodb://127.0.01:27017/site'
