@@ -13,3 +13,7 @@ def index():
 @bp.route('/messages', methods=['GET', 'POST'])
 def messages():
 	return render_template('messages.html')
+
+@bp.route('/contacts', methods=['GET', 'POST'])
+def contacts():
+	return render_template('contacts.html')
