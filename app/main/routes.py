@@ -17,3 +17,7 @@ def messages():
 @bp.route('/contacts', methods=['GET', 'POST'])
 def contacts():
 	return render_template('contacts.html')
+
+@bp.route('/user', methods=['GET', 'POST'])
+def user():
+	return render_template('user.html')
