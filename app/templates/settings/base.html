@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<link rel='stylesheet' href='{{ url_for('static', filename='css/settings.css') }}'/>
+
+<div class="container light-style flex-grow-1 container-p-y">
+    <h2 class="font-weight-bold">Account settings</h2>
+    <div class="card settings overflow-hidden">
+      <div class="row row-bordered row-border-light">
+        <div class="col-md-3 pt-0">
+          <div class="list-group list-group-flush account-settings-links">
+            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+            <a class="list-group-item list-group-item-action" href="#account-change-password">Change password</a>
+          </div>
+        </div>
+        <div class="col-md-9">
+	{% block settings_content %}{% endblock %}
+	</div>
+        <div class="col-md-9">
+          <div class="tab-content">
+	    <div class="tab-pane fade" id="account-change-password">
+              <div class="card-body pb-2">
+
+                <div class="form-group">
+                  <label class="form-label">Current password</label>
+                  <input type="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">New password</label>
+                  <input type="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Repeat new password</label>
+                  <input type="password" class="form-control">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-right" style='margin-top: 20px; margin-bottom: 20px'>
+      <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+      <button type="button" class="btn btn-default">Cancel</button>
+    </div>
+
+  </div>
+
+{% endblock %}
