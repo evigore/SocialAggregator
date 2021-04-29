@@ -1,0 +1,51 @@
+{% extends "settings/base.html" %}
+
+{% block settings_content %}
+
+<div class="tab-pane" id="account-general">
+      <div class="card-body media align-items-center" style='margin-top:20px'>
+        <img src="{{ url_for('static', filename='img/avatar1.png') }}" alt="" width='120px' class="media-left media-object">
+	<div class="media-body row">
+	  <label class="btn btn-outline-primary">
+	    Upload new photo
+	    <input type="file" class="account-settings-fileinput">
+	  </label> &nbsp;
+	  <button type="button" class="btn btn-default md-btn-flat">Reset</button>
+
+	  <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+	</div>
+      </div>
+      <hr class="border-light m-0">
+
+      <div class="card-body">
+	<div class="form-group">
+	  <label class="form-label">Username</label>
+	  <input type="text" class="form-control mb-1" value="nmaxwell">
+	</div>
+      </div>
+</div>
+
+<div class="tab-pane" id="account-connections" style='margin-top:30px'>
+	<div class="card-body">
+		<button type="button" class="btn btn-twitter">Connect to <strong>Twitter</strong></button>
+	</div>
+
+	<hr class="border-light m-0">
+	<div class="card-body">
+		<h3 class="mb-2">You are connected to Google: <span class='title'>nmaxwell@mail.com</span></h3>
+		<button type="button" class="btn btn-remove">Remove</button>
+	</div>
+
+	<hr class="border-light m-0">
+	<div class="card-body">
+		<button type="button" class="btn btn-facebook">Connect to <strong>Facebook</strong></button>
+	</div>
+
+	<hr class="border-light m-0">
+	<div class="card-body">
+		<button type="button" class="btn btn-instagram">Connect to <strong>Instagram</strong></button>
+	</div>
+</div>
+
+
+{% endblock %}
