@@ -1,0 +1,8 @@
+connections:
+  default:
+    url: redis://127.0.0.1:6380/site
+  production:
+    host: redisbrowser
+    port: 6666
+    db: 1
+    auth: password
