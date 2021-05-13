@@ -32,7 +32,18 @@ class SignupForm(FlaskForm):
 			raise ValidationError('Please use a different email.')
 
 class LoginForm(FlaskForm):
-	username = StringField('Username')
-	password = PasswordField('Password')
+	username = StringField('Username', validators=[DataRequired()])
+	password = PasswordField('Password', validators=[DataRequired()])
 	remember = BooleanField('Remember me?')
 	submit = SubmitField('Login')
+
+	def validate_username(self, username):
+		user = User.query.filter_by(username=username.data).first()
+		if user is None:
+			raise ValidationError('Please use a different username.')
+
+	def validate_email(self, email):
+		user = User.query.filter_by(email=email.data).first()
+		if user is None:
+			raise ValidationError('Please use a different email address.')
+
